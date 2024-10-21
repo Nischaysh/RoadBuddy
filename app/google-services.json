@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009144827183",
+    "project_id": "roadbuddy-8a16a",
+    "storage_bucket": "roadbuddy-8a16a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009144827183:android:512aead82002f0610a65da",
+        "android_client_info": {
+          "package_name": "com.example.roadbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmrARLY8uxvjyISZ2SDvzPZo9uTBNGRqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

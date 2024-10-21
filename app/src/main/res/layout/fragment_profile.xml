@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProfileFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/aboutus"
+            android:translationZ="3dp"
+            android:visibility="gone"
+            android:layout_marginBottom="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="750dp"
+            android:orientation="vertical"
+            android:background="@drawable/tile_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <!-- App Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Introduction Section -->
+                    <TextView
+                        android:id="@+id/intro_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What is Road Buddy and why do you need it?"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/intro_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Picture yourself on a long-awaited road trip with your family, enjoying the scenery and your favourite music. Suddenly, your car breaks down—flat tire! The first thought? 'Where’s the nearest repair shop?' But finding one nearby is difficult. Would you really want to drag your car for miles? Situations like flat tires, dead batteries, or empty fuel tanks can quickly turn into panic moments and spoil the trip."
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- We’re here for you Section -->
+                    <TextView
+                        android:id="@+id/help_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We’re here for you"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/help_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="But what if we told you that all you need to do is call a number, share your location and just wait for the assistance crew to arrive. You can get your vehicle checked on the spot. That is what Roadside Assistance is all about, just like the name sounds."
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Customer-centric services Section -->
+                    <TextView
+                        android:id="@+id/services_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer-centric services"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/services_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Many companies are providing Roadside Assistance Plans, but what truly makes the difference is the extent to which they go beyond their call of duty. And currently there is not a single application that offers RSA services across in INDIA."
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Story Section -->
+                    <TextView
+                        android:id="@+id/story_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From thought to innovation"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/story_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="In July 2023, on a summery day, our team member Ankush Patel was riding his motorcycle to his village when he suddenly encountered a problem with his bike. The situation became more stressful as he had to drag his bike for another 2 kilometres, but couldn’t find a repair shop or mechanic. Drawing from our engineering background, we decided to create an app called 'Road Buddy' to help people who face similar roadside issues."
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Developer Team Section -->
+                    <TextView
+                        android:id="@+id/team_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Meet our developers"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <!-- Developer Names and Descriptions -->
+                    <TextView
+                        android:id="@+id/dev_lalit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lalitInfo"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/dev_aman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amanInfo"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/dev_ankush"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ankushInfo"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/dev_naman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/namanInfo"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                    <!-- Contact Us Section -->
+                    <TextView
+                        android:id="@+id/contact_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact us on:"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/contact_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fb • Insta • LinkedIn • WhatsApp • Twitter"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:paddingBottom="16dp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="285dp"
+            android:background="@drawable/bottom_bg"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:layout_height="wrap_content"
+                android:text="Profile" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="196dp"
+            android:layout_height="196dp"
+            android:layout_marginTop="169dp"
+            android:background="@drawable/circule_bg"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="310dp"
+                android:layout_height="310dp"
+                android:layout_marginBottom="12dp"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/profilee" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <TextView
+            android:id="@+id/roleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            app:layout_constraintEnd_toEndOf="@+id/nameText"
+            app:layout_constraintStart_toStartOf="@+id/nameText"
+            app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+        <LinearLayout
+            android:id="@+id/profileBannerBtn"
+            android:layout_width="390dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tile_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roleText">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Your profile"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/user" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="390dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tile_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/profileBannerBtn"
+            app:layout_constraintStart_toStartOf="@+id/profileBannerBtn"
+            app:layout_constraintTop_toBottomOf="@+id/profileBannerBtn">
+
+            <TextView
+                android:id="@+id/textVew17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="My vehicle"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageVie2"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/sedan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/aboutusBtn"
+            android:layout_width="390dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tile_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <TextView
+                android:id="@+id/tetView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="About us"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageV2"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/employee" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/logoutBtn"
+            android:layout_width="390dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tile_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/aboutusBtn"
+            app:layout_constraintStart_toStartOf="@+id/aboutusBtn"
+            app:layout_constraintTop_toBottomOf="@+id/aboutusBtn">
+
+            <TextView
+                android:id="@+id/tetViw17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Log out"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/iageView2"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/quit" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/profileBanner"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/tile_bg"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/grey"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/input_bg"
+                />
+            <TextView
+                android:id="@+id/Phone"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textColor="@color/grey"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/input_bg"
+                />
+            <TextView
+                android:id="@+id/Email"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/grey"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/input_bg"
+                />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

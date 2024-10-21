@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/requesttile"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:translationZ="1dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/tile_bg"
+    android:layout_marginBottom="5dp"
+    android:padding="16dp">
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Service name -->
+        <TextView
+            android:id="@+id/serviceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <!-- Status text -->
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="14sp"
+            android:textColor="#757575" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/helpernameText"
+        android:layout_width="wrap_content"
+        android:text="fghjnhj"
+        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:id="@+id/statusIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="Status Icon"
+        android:src="@drawable/pending" />
+</LinearLayout>
