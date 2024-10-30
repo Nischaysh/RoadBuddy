@@ -2,6 +2,8 @@
 
 RoadBuddy is an Android application designed to facilitate safer and easier journeys by connecting users in need with helpers willing to assist. The app provides two distinct user interfaces: one for users needing help and one for helpers offering assistance. 
 
+![Roadbuddy Screenshot](https://github.com/Nischaysh/RoadBuddy/blob/2256a0bb1a17195533197f62353296a8b40fad50/SS1.png)
+
 ## Features
 
 - **User App ( Roadbuddy )**:
@@ -14,6 +16,8 @@ RoadBuddy is an Android application designed to facilitate safer and easier jour
   - Access real-time locations to locate users quickly.
   - Track and communicate with users in need.
   - Accept or reject requests, with updates automatically stored in Firestore.
+ 
+![Roadbuddy Screenshot](https://github.com/Nischaysh/RoadBuddy/blob/2256a0bb1a17195533197f62353296a8b40fad50/SS2.png)
 
 ## Tech Stack
 
