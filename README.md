@@ -43,7 +43,7 @@ RoadBuddy is an Android application designed to facilitate safer and easier jour
 
 1. **Clone the Repository**: 
    ```bash
-   git clone https://github.com/yourusername/RoadBuddy.git
+   git clone https://github.com/Nischaysh/RoadBuddy.git
 
 2. **Firebase Setup**:
  - Set up Firebase Authentication and Firestore in the Firebase Console.
