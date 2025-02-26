@@ -28,6 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class HomeFragment : Fragment(), OnMapReadyCallback {
 
@@ -185,20 +186,25 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         db.collection("requests")
             .whereEqualTo("userId", userId)
-            .get()
-            .addOnSuccessListener { documents ->
-                val requests = documents.map { doc ->
-                    val service = doc.getString("service") ?: "Unknown"
-                    val helpername = doc.getString("helperName") ?: "Not assign"
-                    val status = doc.getString("status") ?: "pending"
-                    Request(service, status, helpername)  // Map to Request data model
+            .orderBy("timestamp", Query.Direction.DESCENDING) // Order by newest first
+            .addSnapshotListener { documents, error -> // Listen for real-time updates
+                if (error != null) {
+                    Toast.makeText(requireContext(), "Error fetching requests: ${error.message}", Toast.LENGTH_SHORT).show()
+                    return@addSnapshotListener
                 }
-                requestAdapter.updateRequests(requests)  // Update the RecyclerView
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(requireContext(), "Error fetching requests: ${e.message}", Toast.LENGTH_SHORT).show()
+
+                if (documents != null) {
+                    val requests = documents.map { doc ->
+                        val service = doc.getString("service") ?: "Unknown"
+                        val helpername = doc.getString("helperName") ?: "Not assign"
+                        val status = doc.getString("status") ?: "pending"
+                        Request(service, status, helpername) // Map to Request data model
+                    }
+                    requestAdapter.updateRequests(requests) // Automatically updates UI
+                }
             }
     }
+
 
 
     private fun deleteRequestFromFirestore(request: Request) {
