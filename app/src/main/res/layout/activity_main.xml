@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:paddingHorizontal="5dp"
-        android:background="@color/offwhite"
+        android:background="@drawable/tile_bg"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         android:name="com.example.roadbuddy.Fragment.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:layout_marginBottom="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

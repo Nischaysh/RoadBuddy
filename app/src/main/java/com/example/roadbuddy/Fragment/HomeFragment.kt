@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -40,6 +42,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var googleMap: GoogleMap
     private var userLocation: Location? = null
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private lateinit var requestAdapter: RequestAdapter  // Adapter for RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +62,24 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+
+
+        // Initialize BottomSheetBehavior
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet)
+
+        // Set bottom sheet to start at 1/4 of the screen and allow full expansion
+        bottomSheetBehavior.peekHeight = resources.displayMetrics.heightPixels / 3
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+
+        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when (newState) {
+                    BottomSheetBehavior.STATE_EXPANDED -> { /* Fully Expanded */ }
+                    BottomSheetBehavior.STATE_COLLAPSED -> { /* Collapsed to 1/4 screen */ }
+                }
+            }
+            override fun onSlide(bottomSheet: View, slideOffset: Float) { /* Handle Sliding */ }
+        })
         // Get the current user's ID
         val userId = auth.currentUser?.uid
 
@@ -115,6 +136,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
+
 
         // Check for location permissions
         if (ActivityCompat.checkSelfPermission(

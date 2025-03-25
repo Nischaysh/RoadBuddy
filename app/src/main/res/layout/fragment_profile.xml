@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightgrey"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.ProfileFragment">
 
@@ -214,12 +215,12 @@
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
-                android:layout_marginTop="50dp"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/white"
-                android:textSize="25sp"
                 android:layout_height="wrap_content"
-                android:text="Profile" />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

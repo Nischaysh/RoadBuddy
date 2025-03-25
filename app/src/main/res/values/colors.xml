@@ -9,4 +9,7 @@
     <color name="lightgrey">#f1f1f1</color>
     <color name="blue">#49adf4</color>
     <color name="purple">#5768c2</color>
+<!--    <color name="purple">#5768c2</color>-->
+    <color name="purple1">#CDD8F0</color>
+    <color name="purple2">#E3E8F6</color>
 </resources>
