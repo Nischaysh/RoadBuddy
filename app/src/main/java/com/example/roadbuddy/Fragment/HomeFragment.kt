@@ -4,9 +4,12 @@ import Request
 import RequestAdapter
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +19,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.Visibility
+import com.example.roadbuddy.Activity.MainActivity
+import com.example.roadbuddy.Activity.SigninActivity
 import com.example.roadbuddy.R
 import com.example.roadbuddy.databinding.FragmentHomeBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -44,6 +50,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private var userLocation: Location? = null
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private lateinit var requestAdapter: RequestAdapter  // Adapter for RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,6 +129,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         // Fetch and display user requests
         fetchUserRequests()
+
+        binding.skipbtn.setOnClickListener {
+            binding.requestloading.visibility = View.GONE
+        }
 
 
         binding.accidentscase.setOnClickListener {
@@ -227,35 +238,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             }
     }
 
-
-
-    private fun deleteRequestFromFirestore(request: Request) {
-        val userId = auth.currentUser?.uid ?: return
-
-        // Query to find the document with the matching service and userId
-        db.collection("requests")
-            .whereEqualTo("userId", userId)
-            .whereEqualTo("service", request.service)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    // Delete the document
-                    db.collection("requests").document(document.id).delete()
-                        .addOnSuccessListener {
-                            Toast.makeText(requireContext(), "Request deleted", Toast.LENGTH_SHORT).show()
-                            fetchUserRequests()  // Refresh the requests
-                        }
-                        .addOnFailureListener { e ->
-                            Toast.makeText(requireContext(), "Error deleting request: ${e.message}", Toast.LENGTH_SHORT).show()
-                        }
-                }
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(requireContext(), "Error finding request: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-
     // Method to display confirmation dialog
     private fun showConfirmationDialog(service: String) {
         val builder = android.app.AlertDialog.Builder(requireContext())
@@ -309,6 +291,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                                     .add(requestData)
                                     .addOnSuccessListener {
                                         Toast.makeText(requireContext(), "Request sent successfully!", Toast.LENGTH_SHORT).show()
+                                        binding.requestloading.visibility  = View.VISIBLE
+                                        Handler(Looper.getMainLooper()).postDelayed({
+                                            binding.requestloading.visibility = View.GONE
+                                        },300000)
                                     }
                                     .addOnFailureListener { e ->
                                         Toast.makeText(requireContext(), "Error sending request: ${e.message}", Toast.LENGTH_SHORT).show()

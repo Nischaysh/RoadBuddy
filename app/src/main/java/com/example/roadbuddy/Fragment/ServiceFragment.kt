@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.location.Location
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +43,9 @@ class ServiceFragment : Fragment() {
     ): View? {
         _binding = FragmentServiceBinding.inflate(inflater, container, false)
 
+        binding.skipbtn.setOnClickListener {
+            binding.requestloading.visibility = View.GONE
+        }
         // Add click listeners for service buttons
         binding.flatTyreBtn.setOnClickListener {
             showConfirmationDialog("Flat Tyres")
@@ -141,6 +146,10 @@ class ServiceFragment : Fragment() {
                                     .add(requestData)
                                     .addOnSuccessListener {
                                         Toast.makeText(requireContext(), "Request sent successfully!", Toast.LENGTH_SHORT).show()
+                                        binding.requestloading.visibility = View.VISIBLE
+                                        Handler(Looper.getMainLooper()).postDelayed({
+                                            binding.requestloading.visibility = View.GONE
+                                        },300000)
                                     }
                                     .addOnFailureListener { e ->
                                         Toast.makeText(requireContext(), "Error sending request: ${e.message}", Toast.LENGTH_SHORT).show()
