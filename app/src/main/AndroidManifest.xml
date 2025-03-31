@@ -40,6 +40,9 @@
         <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.UserProfileActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

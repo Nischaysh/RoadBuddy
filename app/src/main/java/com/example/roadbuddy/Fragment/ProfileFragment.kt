@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.roadbuddy.Activity.SigninActivity
 import com.example.roadbuddy.Activity.SplashscreenActivity
+import com.example.roadbuddy.Activity.UserProfileActivity
 import com.example.roadbuddy.R
 import com.example.roadbuddy.databinding.FragmentHomeBinding
 import com.example.roadbuddy.databinding.FragmentProfileBinding
@@ -67,7 +68,7 @@ class ProfileFragment : Fragment() {
 
 
         binding.profileBannerBtn.setOnClickListener{
-            binding.profileBanner.visibility = View.VISIBLE
+            startActivity(Intent(context, UserProfileActivity::class.java))
         }
         binding.aboutusBtn.setOnClickListener{
             binding.aboutus.visibility = View.VISIBLE

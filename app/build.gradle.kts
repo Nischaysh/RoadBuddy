@@ -61,6 +61,14 @@ dependencies {
     // Location services
     implementation (libs.play.services.location)
 
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+
+    // Firebase Storage
+    implementation ("com.google.firebase:firebase-storage-ktx:20.3.0")
+
+    // Image picker
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
 
     implementation ("com.google.firebase:firebase-messaging:23.1.0")
 
