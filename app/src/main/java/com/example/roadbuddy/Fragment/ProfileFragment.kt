@@ -36,43 +36,29 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val userId = auth.currentUser?.uid
+        if (userId != null) {
+            db.collection("users").document(userId).get()
+                .addOnSuccessListener { document->
+                    val userName = document.getString("name")
+                    val role = document.getString("role")
+                    binding.nameText.text  = userName
+                    binding.roleText.text = role
+                }
+        }
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         binding.logoutBtn.setOnClickListener{
                 auth.signOut()
                 startActivity(Intent(context , SplashscreenActivity::class.java))
         }
-
-        val UserId = auth.currentUser?.uid
-        if (UserId != null) {
-            db.collection("users").document(UserId).get()
-                .addOnSuccessListener { document ->
-                    if (document != null) {
-                        val userName = document.getString("name")!!.toUpperCase(Locale.ROOT)
-                        val userRole = document.getString("role")
-                        val userEmail = document.getString("email")
-                        val userPhone = document.getString("phone")
-
-                        if (userName != null||userRole != null||userPhone != null || userEmail!=null) {
-
-                            binding.nameText.text = userName
-                            binding.Name.text = userName
-                            binding.roleText.text = userRole
-                            binding.Email.text = userEmail
-                            binding.Phone.text = userPhone
-
-                        }
-                    }
-                    }
-                }
-
-
         binding.profileBannerBtn.setOnClickListener{
             startActivity(Intent(context, UserProfileActivity::class.java))
         }
         binding.aboutusBtn.setOnClickListener{
             binding.aboutus.visibility = View.VISIBLE
         }
+
 
 
         return binding.root
