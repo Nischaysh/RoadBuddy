@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.helperbuddy.Fragment.MessagesFragment
+import com.example.roadbuddy.Fragment.ChatlistFragment
 import com.example.roadbuddy.Fragment.HomeFragment
 import com.example.roadbuddy.Fragment.ProfileFragment
 import com.example.roadbuddy.Fragment.ServiceFragment
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             profileBtn.setColorFilter(getColor(R.color.black))
         }
         shopBtn.setOnClickListener{
-            goToFragment(MessagesFragment())
+            goToFragment(ChatlistFragment())
             homeBtn.setColorFilter(getColor(R.color.black))
             serviceBtn.setColorFilter(getColor(R.color.black))
             shopBtn.setColorFilter(getColor(R.color.red))
