@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/requesttile"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:translationZ="1dp"
+    android:backgroundTint="@color/white"
+    android:gravity="center_vertical"
+    android:background="@drawable/input_bg"
+    android:layout_marginBottom="5dp"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:srcCompat="@drawable/baseline_account_circle_24" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Name -->
+
+        <TextView
+            android:id="@+id/NameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <!-- Email text -->
+        <TextView
+            android:id="@+id/PhoneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="14sp"
+            android:textColor="#757575" />
+    </LinearLayout>
+
+</LinearLayout>

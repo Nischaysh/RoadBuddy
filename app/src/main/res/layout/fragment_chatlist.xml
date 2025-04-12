@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:backgroundTint="@color/purple2"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ChatlistFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/top_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="55dp"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:layout_height="wrap_content"
+            android:text="Conversation" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:backgroundTint="@color/purple2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="110dp"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>
