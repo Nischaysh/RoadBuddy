@@ -299,7 +299,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout4"
+            android:id="@+id/MyVehicalBtn"
             android:layout_width="390dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
@@ -337,9 +337,9 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout4"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+            app:layout_constraintEnd_toEndOf="@+id/MyVehicalBtn"
+            app:layout_constraintStart_toStartOf="@+id/MyVehicalBtn"
+            app:layout_constraintTop_toBottomOf="@+id/MyVehicalBtn">
 
             <TextView
                 android:id="@+id/tetView17"
@@ -358,7 +358,6 @@
         </LinearLayout>
 
         <LinearLayout
-
             android:id="@+id/logoutBtn"
             android:layout_width="390dp"
             android:layout_height="50dp"
@@ -377,11 +376,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Log out"
+                android:textColor="@color/red"
                 android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/iageView2"
                 android:layout_width="26dp"
+                app:tint="@color/red"
                 android:layout_height="26dp"
                 android:src="@drawable/quit" />
 

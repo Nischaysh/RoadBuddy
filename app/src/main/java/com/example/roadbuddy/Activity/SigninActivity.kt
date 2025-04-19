@@ -36,7 +36,7 @@
 
             binding.button.setOnClickListener {
                 val email = binding.editTextTextEmail.text.toString().trim()
-                val name = binding.editTextText.text.toString().trim()
+                val name = binding.editTextTextName.text.toString().trim()
                 val phone = binding.editTextPhone.text.toString().trim()
                 val password = binding.editTextTextPassword3.text.toString().trim()
 

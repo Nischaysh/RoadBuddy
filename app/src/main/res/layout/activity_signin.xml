@@ -57,14 +57,14 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editTextTextName"
             android:layout_width="360dp"
             android:layout_height="50dp"
             android:layout_marginTop="64dp"
             android:background="@drawable/input_bg"
             android:ems="10"
+            android:inputType="textCapSentences"
             android:hint="e.g. Ankush Patel"
-            android:inputType="text"
             android:paddingLeft="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,8 +77,8 @@
             android:layout_marginStart="8dp"
             android:text="Name"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText"
-            app:layout_constraintStart_toStartOf="@+id/editTextText" />
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextName"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextName" />
 
         <EditText
             android:id="@+id/editTextTextEmail"
@@ -90,9 +90,9 @@
             android:paddingLeft="12dp"
             android:inputType="textEmailAddress"
             android:hint="e.g. Xyz@gmail.com"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText"
-            app:layout_constraintStart_toStartOf="@+id/editTextText"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextName"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
 
         <TextView
             android:id="@+id/textView5"
